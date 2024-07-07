@@ -28,6 +28,12 @@ jobs:
     - name: Build with restore
       run: msbuild -t:restore,build -p:RestorePackagesConfig=true /p:TargetFrameworkVersion=4.8.1
 
+    - name: show_infor
+      run: |
+        echo ${{ secrets.FTP_SERVER }}
+        echo ${{ secrets.FTP_LOGIN }}
+        echo ${{ secrets.FTP_PASSWORD }}          
+    
     - name: Push files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
