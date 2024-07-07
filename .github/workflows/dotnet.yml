@@ -35,7 +35,7 @@ jobs:
         echo ${{ secrets.FTP_PASSWORD }}          
     
     - name: Push files
-      uses: airvzxf/ftp-deployment-action@latest
+      uses: modern-dev/ftp-mirror@v2
       with:
         server: ${{ secrets.FTP_SERVER }}
         user: ${{ secrets.FTP_LOGIN }}
