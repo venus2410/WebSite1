@@ -40,5 +40,5 @@ jobs:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_LOGIN }}
         password: ${{ secrets.FTP_PASSWORD }}
-        server_dir: /htdocs/
+        server_dir: './htdocs/'
     
