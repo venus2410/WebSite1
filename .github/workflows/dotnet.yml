@@ -33,5 +33,5 @@ jobs:
       with:
         server: 123.20.128.16
         username: testftp
-        password: ${{ secrets.ftp_password }}
+        password: ${{ secrets.FTP_PASSWORD }}
     
