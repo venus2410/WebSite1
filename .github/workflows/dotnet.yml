@@ -27,18 +27,12 @@ jobs:
       
     - name: Build with restore
       run: msbuild /p:TargetFrameworkVersion=4.8.1
-
-    - name: show_infor
-      run: |
-        echo ${{ secrets.FTP_SERVER }}
-        echo ${{ secrets.FTP_LOGIN }}
-        echo ${{ secrets.FTP_PASSWORD }}          
-    
+   
     - name: Push files
-      uses: modern-dev/ftp-mirror@v2
+      uses: sebastianpopp/ftp-action@releases/v2
       with:
-        server: ${{ secrets.FTP_SERVER }}
+        host: ${{ secrets.FTP_SERVER }}
         user: ${{ secrets.FTP_LOGIN }}
         password: ${{ secrets.FTP_PASSWORD }}
-        remote_dir: "./SourceCode/"
+        remoteDir: "./SourceCode/"
     
