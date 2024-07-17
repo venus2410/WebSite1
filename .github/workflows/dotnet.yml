@@ -28,11 +28,12 @@ jobs:
     - name: Build with restore
       run: msbuild /p:TargetFrameworkVersion=4.8.1
    
-    - name: Push files
-      uses: joutvhu/ftp-transfer@v1
+    - name: Sync files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
-        host: ${{ secrets.FTP_SERVER }}
-        username: ${{ secrets.FTP_LOGIN }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        commands: put ./ ./htdocs/
+        server: ftpupload.net
+        username: if0_36922172
+        password: ${{ secrets.ftp_password }}
+        port: 21
+        server_dir: ./htdocs/
     
