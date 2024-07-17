@@ -26,7 +26,7 @@ jobs:
       uses: microsoft/setup-msbuild@v2
       
     - name: Build with restore
-      run: msbuild /p:TargetFrameworkVersion=4.8.1
+      run: msbuild /p:TargetFrameworkVersion=4.8.1 /p:Configuration=Release
       
     - name: Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
